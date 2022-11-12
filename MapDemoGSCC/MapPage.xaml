@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="MapDemoGSCC.MapPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="Map Page">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="40" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Map
+            x:Name="map"
+            Grid.RowSpan="4"
+            Grid.ColumnSpan="3"
+            IsEnabled="True"
+            IsScrollEnabled="True"
+            IsZoomEnabled="True"
+            MapType="Hybrid" />
+        <SearchBar
+            x:Name="searchBar"
+            Grid.Row="0"
+            Grid.Column="0"
+            Grid.ColumnSpan="3"
+            BackgroundColor="#88666666"
+            Placeholder="Enter a location"
+            PlaceholderColor="White"
+            SearchButtonPressed="SearchBar_SearchButtonPressed" />
+        <Button
+            Grid.Row="3"
+            Clicked="Shapes_Clicked"
+            Text="Shapes" />
+        <Button
+            Grid.Row="3"
+            Grid.Column="2"
+            Clicked="Route_Clicked"
+            Text="Routes" />
+    </Grid>
+</ContentPage>
